@@ -1,0 +1,49 @@
+# Project: P3Lab7_RonalZuniga
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Mago.o MagoSlytherin.o MagoHufflepuff.o MagoRavenclaw.o MagoGryffindor.o ClaseHogwarts.o SombreroClasificador.o
+LINKOBJ  = main.o Mago.o MagoSlytherin.o MagoHufflepuff.o MagoRavenclaw.o MagoGryffindor.o ClaseHogwarts.o SombreroClasificador.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = P3Lab7_RonalZuniga.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Mago.o: Mago.cpp
+	$(CPP) -c Mago.cpp -o Mago.o $(CXXFLAGS)
+
+MagoSlytherin.o: MagoSlytherin.cpp
+	$(CPP) -c MagoSlytherin.cpp -o MagoSlytherin.o $(CXXFLAGS)
+
+MagoHufflepuff.o: MagoHufflepuff.cpp
+	$(CPP) -c MagoHufflepuff.cpp -o MagoHufflepuff.o $(CXXFLAGS)
+
+MagoRavenclaw.o: MagoRavenclaw.cpp
+	$(CPP) -c MagoRavenclaw.cpp -o MagoRavenclaw.o $(CXXFLAGS)
+
+MagoGryffindor.o: MagoGryffindor.cpp
+	$(CPP) -c MagoGryffindor.cpp -o MagoGryffindor.o $(CXXFLAGS)
+
+ClaseHogwarts.o: ClaseHogwarts.cpp
+	$(CPP) -c ClaseHogwarts.cpp -o ClaseHogwarts.o $(CXXFLAGS)
+
+SombreroClasificador.o: SombreroClasificador.cpp
+	$(CPP) -c SombreroClasificador.cpp -o SombreroClasificador.o $(CXXFLAGS)
